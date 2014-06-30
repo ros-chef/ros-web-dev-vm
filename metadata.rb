@@ -1,4 +1,4 @@
-name             'ros-web-dev-home'
+name             'ros-web-dev-vm'
 maintainer       'Alexander Sorokin'
 maintainer_email 'syrnick@gmail.com'
 license          'BSD'
