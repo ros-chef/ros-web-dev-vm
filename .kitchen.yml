@@ -1,0 +1,21 @@
+---
+driver:
+  name: vagrant
+  network:
+    - ["forwarded_port", {guest: 9090, host: 9090}]
+  vm_hostname: 'ros-web-dev'
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[ros-web-dev::default]
+    attributes:
+      ros:
+        #flavor: ros-base
+        flavor: desktop-full
