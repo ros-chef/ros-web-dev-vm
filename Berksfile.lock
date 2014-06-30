@@ -5,7 +5,7 @@ DEPENDENCIES
     path: ../../../../../../Volumes/ros/ros-chef/ros
   ros-web-dev
     path: site-cookbooks/ros-web-dev
-  ros-web-dev-home
+  ros-web-dev-vm
     path: .
     metadata: true
 
@@ -21,7 +21,7 @@ GRAPH
   ros-web-dev (0.1.0)
     apt (>= 0.0.0)
     ros (>= 0.0.0)
-  ros-web-dev-home (0.1.0)
+  ros-web-dev-vm (0.1.0)
     apt (>= 0.0.0)
     ros (>= 0.0.0)
     ros-web-dev (>= 0.0.0)
