@@ -3,7 +3,7 @@ package "git"
 
 include_recipe "nodejs"
 
-packages = %w(grunt-cli karma)
+packages = %w(grunt-cli karma bower)
 
 packages.each do |package_name|
   nodejs_npm package_name
@@ -30,6 +30,7 @@ end
 
 execute "build roslibjs" do
   cwd "/home/#{user}/rwt/roslibjs/utils"
+  user user
   command "npm install && grunt build && touch .initial.build.done"
   not_if { File.exists?( "/home/#{user}/rwt/roslibjs/utils/.initial.build.done" ) }
 end

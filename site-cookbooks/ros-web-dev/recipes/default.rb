@@ -7,10 +7,10 @@
 #
 #
 
-ros_release = "indigo"
+ros_distro = "indigo"
 
 ros 'indigo' do
-  release ros_release
+  release ros_distro
   flavor node[:ros][:flavor]
 end
 
@@ -20,13 +20,12 @@ packages = %w(
 )
 
 packages.each do |package_name|
-  package "ros-#{ros_release}-#{package_name}"
+  package "ros-#{ros_distro}-#{package_name}"
 end
 
 include_recipe 'ros::runit'
 
 user = node[:ros][:user]
-ros_distro = "indigo"
 
 ros_sv 'rosbridge' do
   user user
