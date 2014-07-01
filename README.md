@@ -22,4 +22,3 @@ Run `kitchen login 1404` to login into the VM and run around.
  * add catkin_ws
  * add roslibjs_integration_tests
  * rename roslibjs_integration_tests to e2e
- * sudo chown -R vagrant:vagrant ~/.

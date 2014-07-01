@@ -13,6 +13,11 @@ include_recipe "phantomjs::default"
 
 user = node["ros_web_dev"]["user"]
 
+execute "build roslibjs" do
+  cwd "/home/#{user}/"
+  command "chown -R #{user} ."
+end
+
 directory "/home/#{user}/rwt" do
   user user
   group user
