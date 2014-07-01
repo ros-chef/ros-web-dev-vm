@@ -15,6 +15,7 @@ suites:
   - name: default
     run_list:
       - recipe[ros-web-dev::default]
+      - recipe[ros-web-dev::dev_setup]
     attributes:
       ros:
         #flavor: ros-base

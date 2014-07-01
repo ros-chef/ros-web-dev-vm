@@ -8,3 +8,5 @@ version          '0.1.0'
 
 depends "ros"
 depends "apt"
+depends "nodejs"
+depends "phantomjs"
