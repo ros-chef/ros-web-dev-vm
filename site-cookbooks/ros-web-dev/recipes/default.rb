@@ -20,7 +20,9 @@ packages = %w(
 )
 
 packages.each do |package_name|
-  package "ros-#{ros_distro}-#{package_name}"
+  package "ros-#{ros_distro}-#{package_name}" do
+    timeout 3600
+  end
 end
 
 include_recipe 'ros::runit'
