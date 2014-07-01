@@ -18,6 +18,7 @@ Run `kitchen login 1404` to login into the VM and run around.
 # TODO:
 
  * add development tools to the VM
+ * add nginx/tengine web server to serve requests and proxy to apps
  * add catkin_ws
  * add roslibjs_integration_tests
  * rename roslibjs_integration_tests to e2e

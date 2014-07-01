@@ -3,6 +3,7 @@ driver:
   name: vagrant
   network:
     - ["forwarded_port", {guest: 9090, host: 9090}]
+    - ["forwarded_port", {guest: 8081, host: 8081}]
   vm_hostname: 'ros-web-dev'
 
 provisioner:
@@ -15,7 +16,8 @@ suites:
   - name: default
     run_list:
       - recipe[ros-web-dev::default]
-      - recipe[ros-web-dev::dev_setup]
+      - recipe[ros-web-dev::rwt_dev_setup]
+      - recipe[ros-web-dev::angular_ros]
     attributes:
       ros:
         #flavor: ros-base
