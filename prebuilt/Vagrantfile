@@ -1,4 +1,4 @@
-Vagrant.configure("ros-web-dev-vm") do |c|
+Vagrant.configure("2") do |c|
   c.vm.box = "ros-web-dev-ubuntu-14.04-0.1.0"
   c.vm.box_url = "https://ros-chef.s3.amazonaws.com/vagrant/boxes/ros-web-dev-vm-ubuntu-14.04-0.1.0.box"
   c.vm.hostname = "ros-web-dev"
