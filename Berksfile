@@ -8,7 +8,9 @@ cookbook 'python'
 cookbook 'nodejs', github: 'redguide/nodejs'
 cookbook 'phantomjs'
 
-cookbook 'ros', git: 'git://github.com/ros-chef/ros.git'
-#cookbook 'ros', path: '/Volumes/ros/ros-chef/ros'
+cookbook 'ros', github: 'ros-chef/ros'
+cookbook 'ros-web-dev', github: 'ros-chef/ros-web-dev'
 
-cookbook 'ros-web-dev', path: 'site-cookbooks/ros-web-dev'
+# This is convenient for local development
+#cookbook 'ros', path: '../ros'
+#cookbook 'ros-web-dev', path: '../ros-web-dev'
