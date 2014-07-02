@@ -41,8 +41,9 @@ You'd need to get an S3 IAM user that has access to ros-chef bucket to upload th
     export BOX="ros-web-dev-vm-ubuntu-14.04-${VERSION}.box"
     cd .kitchen/kitchen-vagrant/default-ubuntu-1404
     vagrant package --output /Volumes/ros/ros-boxes/$BOX
-    s3cmd put /Volumes/ros/ros-boxes/$BOX s3://ros-chef//boxes/virtualbox/
-    s3cmd setacl s3://ros-chef//boxes/virtualbox/$BOX --acl-public --recursive
+    s3cmd --acl-public put /Volumes/ros/ros-boxes/$BOX s3://ros-chef/vagrant/boxes/
+
+Edit prebuilt/Vagrantfile to point to the new box version URL
 
 # What's going on?
  * ROS (indigo, desktop-full) is installed on the VM.
