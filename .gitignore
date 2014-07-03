@@ -1,2 +1,3 @@
 /.kitchen/
 /site-cookbooks/ros-web-dev/.kitchen/
+.vagrant

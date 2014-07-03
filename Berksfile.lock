@@ -10,7 +10,7 @@ DEPENDENCIES
     revision: 64706bdf934fb75c574766698f625cc39f58e10c
   ros-web-dev
     git: git://github.com/ros-chef/ros-web-dev.git
-    revision: 66630111280824e4330b24d9d6017b785abe8323
+    revision: 1db1a530728804f5fdf42fd8392787ac10d20a67
   ros-web-dev-vm
     path: .
     metadata: true
