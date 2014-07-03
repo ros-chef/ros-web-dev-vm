@@ -7,10 +7,10 @@ DEPENDENCIES
   python
   ros
     git: git://github.com/ros-chef/ros.git
-    revision: 64706bdf934fb75c574766698f625cc39f58e10c
+    revision: 18045a340d59ae9d1d5391de2ea583c575c52a2f
   ros-web-dev
     git: git://github.com/ros-chef/ros-web-dev.git
-    revision: 1db1a530728804f5fdf42fd8392787ac10d20a67
+    revision: ebee5977a3f063739086dad6d7f215793be54e17
   ros-web-dev-vm
     path: .
     metadata: true

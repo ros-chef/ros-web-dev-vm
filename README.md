@@ -19,12 +19,17 @@ You can also just download a pre-built VM and run with it.
  * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads)
  * run `bundle`
  * run `berks install` to pull cookbook
- * run `kitchen converge all`
+ * run `kitchen converge 1404`
+ * run `kitchen login 1404` then `sudo dpkg --configure -a` then `C^-d` (exit)
+    - It seems that apt-get install ros-..-desktop-full takes too long (TODO #1)
+ * run `kitchen converge 1404`
 
 Run `kitchen login 1404` to login into the VM and run around.
 
-# TODO:
 
+# TODOs:
+
+ * Make consistent provisioning
  * add development tools to the VM (emacs, vim, etc??)
  * test sharing directories between the local and the VM
  * tweak the VM memory settings
@@ -37,10 +42,13 @@ Run `kitchen login 1404` to login into the VM and run around.
 
 You'd need to get an S3 IAM user that has access to ros-chef bucket to upload the box.
 
+    kitchen destroy 1404
+    time kitchen converge 1404
+
     export VERSION=0.1.0
     export BOX="ros-web-dev-vm-ubuntu-14.04-${VERSION}.box"
     cd .kitchen/kitchen-vagrant/default-ubuntu-1404
-    vagrant package --output /Volumes/ros/ros-boxes/$BOX
+    time vagrant package --output /Volumes/ros/ros-boxes/$BOX
     s3cmd --acl-public put /Volumes/ros/ros-boxes/$BOX s3://ros-chef/vagrant/boxes/
 
 Edit prebuilt/Vagrantfile to point to the new box version URL
