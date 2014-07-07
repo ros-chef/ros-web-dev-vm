@@ -45,7 +45,7 @@ You'd need to get an S3 IAM user that has access to ros-chef bucket to upload th
     kitchen destroy 1404
     time kitchen converge 1404
 
-    export VERSION=0.1.0
+    export VERSION=0.1.1
     export BOX="ros-web-dev-vm-ubuntu-14.04-${VERSION}.box"
     cd .kitchen/kitchen-vagrant/default-ubuntu-1404
     time vagrant package --output /Volumes/ros/ros-boxes/$BOX
@@ -55,18 +55,22 @@ Edit prebuilt/Vagrantfile to point to the new box version URL
 
 # What's going on?
  * ROS (indigo, desktop-full) is installed on the VM.
- * roslibjs is cloned; all dependencies are installed & and it's [built](https://github.com/ros-chef/ros-web-dev/blob/master/recipes/rwt_dev_setup.rb#L39)
- * angular-ros is cloned; all dependencies are installed
+ * [roslibjs](https://github.com/RobotWebTools/roslibjs) is cloned; all dependencies are installed
+   and it's [built](https://github.com/ros-chef/ros-web-dev/blob/master/recipes/rwt_dev_setup.rb#L39)
+ * [angular-ros](https://github.com/syrnick/angular-ros) is cloned; all dependencies are installed
 
  * roscore is launced (see ~/.ros/sv)
  * rosbridge is [launced](https://github.com/ros-chef/ros-web-dev/blob/master/recipes/default.rb#L51) (see ~/.ros/sv)
- * fibbonacci server is [launced](https://github.com/ros-chef/ros-web-dev/blob/master/recipes/default.rb#L57) as a daemon (see ~/.ros/sv)
+ * fibbonacci server is [launced](https://github.com/ros-chef/ros-web-dev/blob/master/recipes/default.rb#L57)
+   as a daemon (see ~/.ros/sv)
 
  * python simple server is
    [launched](https://github.com/ros-chef/ros-web-dev/blob/master/recipes/angular_ros.rb#L20)
    in ~/rwt/angular-ros on port 8081
 
- * Port 9090 and 8081 are forwarded from the local into the VM, so that you can server static
+ * Port 9090 and 8081 are forwarded from the local into the VM, so
+   that you can serve static content when you go to
+   http://localhost:8081/examples/demo.html and access rosbridge on port 9090.
 
 # Why?
 
