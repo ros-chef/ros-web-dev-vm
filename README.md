@@ -7,15 +7,6 @@ integration tests.
 
 You can also just download a pre-built VM and run with it.
 
-# Super-Quickstart
-
-:( vagrant box package doesn't seem to produce a viable box for me, so this doesn't work for now
-
- * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads)
- * cd prebuilt
- * vagrant up
- * go to the demo page: http://localhost:8081/examples/demo.html
-
 # Quickstart
 
 This should take under an hour to get a fully-functional ROS VM.
@@ -43,6 +34,8 @@ Run `kitchen login 1404` to login into the VM and run around.
 
 # Packaging
 
+NOTE: THIS SEEMS TO BE BROKEN. SOMEHOW THE PRODUCED BOX FAILS TO IMPORT
+
 You'd need to get an S3 IAM user that has access to ros-chef bucket to upload the box.
 
     kitchen destroy 1404
@@ -55,6 +48,16 @@ You'd need to get an S3 IAM user that has access to ros-chef bucket to upload th
     s3cmd --acl-public put /Volumes/ros/ros-boxes/$BOX s3://ros-chef/vagrant/boxes/
 
 Edit prebuilt/Vagrantfile to point to the new box version URL
+
+#### To restore:
+
+NOTE: it's somehow broken
+
+ * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads)
+ * cd prebuilt
+ * [Optional, if packaged on this box] `vagrant box add $BOX /Volumes/ros/ros-boxes/$BOX`
+ * vagrant up
+ * go to the demo page: http://localhost:8081/examples/demo.html
 
 # What's going on?
  * ROS (indigo, desktop-full) is installed on the VM.
