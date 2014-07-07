@@ -8,6 +8,9 @@ integration tests.
 You can also just download a pre-built VM and run with it.
 
 # Super-Quickstart
+
+:( vagrant box package doesn't seem to produce a viable box for me, so this doesn't work for now
+
  * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads)
  * cd prebuilt
  * vagrant up
@@ -15,14 +18,14 @@ You can also just download a pre-built VM and run with it.
 
 # Quickstart
 
+This should take under an hour to get a fully-functional ROS VM.
+
  * Install [chefdk](http://www.getchef.com/downloads/chef-dk/mac/)
  * Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads)
  * run `bundle`
  * run `berks install` to pull cookbook
  * run `kitchen converge 1404`
- * run `kitchen login 1404` then `sudo dpkg --configure -a` then `C^-d` (exit)
-    - It seems that apt-get install ros-..-desktop-full takes too long (TODO #1)
- * run `kitchen converge 1404`
+    "Kitchen is finished. (35m41.03s)" - it'll likely take a bit longer on the first run to download the chef box.
 
 Run `kitchen login 1404` to login into the VM and run around.
 
