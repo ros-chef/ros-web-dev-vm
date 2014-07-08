@@ -34,7 +34,10 @@ Run `kitchen login 1404` to login into the VM and run around.
 
 # Packaging
 
-NOTE: THIS SEEMS TO BE BROKEN. SOMEHOW THE PRODUCED BOX FAILS TO IMPORT
+NOTE: THIS SEEMS TO BE BROKEN. SOMEHOW THE PRODUCED BOX FAILS TO IMPORT.
+
+I was able to package and restore a box once, but all my recent
+attempts at this failed miserably. I've no idea why :(
 
 You'd need to get an S3 IAM user that has access to ros-chef bucket to upload the box.
 
